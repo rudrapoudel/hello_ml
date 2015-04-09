@@ -158,7 +158,7 @@ local feval = function(x)
   else
     outputs = outputs:float()
   end
---  print(outputs)
+  print(outputs)
   local df_do = torch.Tensor(outputs:size(1), outputs:size(2)):float()
   for i=1,batch_size do
     local err = 0;
@@ -167,17 +167,17 @@ local feval = function(x)
       err = criterion:forward(outputs[i], targets_matrix[i])
       -- estimate df/dW
       df_do[i]:copy(criterion:backward(outputs[i], targets_matrix[i]))
-      print(outputs[i])
-      print(targets_matrix[i])
-      print(df_do[i])
+      -- print(outputs[i])
+      -- print(targets_matrix[i])
+      -- print(df_do[i])
     elseif opt.train_criterion == 'NLL' then
       -- get error
       err = criterion:forward(outputs[i], targets[i])
       -- estimate df/dW
       df_do[i]:copy(criterion:backward(outputs[i], targets[i]))
-      print(outputs[i])
-      print(targets[i])
-      print(df_do[i])
+      -- print(outputs[i])
+      -- print(targets[i])
+      -- print(df_do[i])
     end    
     f = f + err
   end
