@@ -76,7 +76,7 @@ model:add(nn.SpatialConvolutionMM(feature_size[2], feature_size[3], filter_size[
 model:add(nn.Threshold(0,1e-6))
 model:add(nn.SpatialMaxPooling(pool_size[1],pool_size[2],pool_step[1],pool_step[2])) -- 5
 -- Get feature vectors i.e. flat feature maps
-model:add(nn.View(features_out)) 
+model:add(nn.Reshape(features_out, true)) 
 if opt.dropout then
   model:add(nn.Dropout(dropout_p))
 end
