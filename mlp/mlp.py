@@ -1,6 +1,7 @@
 """
 An example of Multilayer Neural Network using stochastic
-gradient descent.
+gradient descent for MNIST 0-9 digit recognition.
+
 """
 __docformat__ = 'restructedtext en'
 

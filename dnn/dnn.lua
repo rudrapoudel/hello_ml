@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------
--- A Complete and Minimum Example of DNN in Torch
+-- A complete and minimum example of DNN in Torch.
 --
 -- Rudra Poudel
 ----------------------------------------------------------------------

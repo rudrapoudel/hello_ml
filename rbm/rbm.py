@@ -1,4 +1,10 @@
-# http://blog.echen.me/2011/07/18/introduction-to-restricted-boltzmann-machines/
+"""
+    An example of Restricted Boltzmann Machine from scratch.
+    
+    Ref- http://blog.echen.me/2011/07/18/introduction-to-restricted-boltzmann-machines/
+    
+"""
+#
 
 from __future__ import print_function
 import numpy as np
