@@ -12,3 +12,5 @@ A complete and minimum example of DNN in Torch.
 #RBM- Restricted Boltzmann Machine
 An example of Restricted Boltzmann Machine from scratch. Written in Python.
 
+#Stanford-Tutorials- Solutions for Stanford tutorials
+Solutions for some of the Stanford tutorials.
