@@ -10,7 +10,9 @@ An example of multilayer neural network using stochastic gradient descent for MN
 A complete and minimum example of DNN in Torch.
 
 #DNN-multi-GPU- Deep Neural Network
-A complete and minimum example of multi-GPUs DNN in Torch.
+A complete and minimum example of multi-GPUs DNN in Torch. Use following command for testing,
+
+> th dnn-multi-gpu.lua -batch_size 256 -epoch_size 200 -num_gpu 4 
 
 #RBM- Restricted Boltzmann Machine
 An example of Restricted Boltzmann Machine from scratch. Written in Python.
