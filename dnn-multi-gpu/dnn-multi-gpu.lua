@@ -45,13 +45,13 @@ torch.manualSeed(opt.seed)
 -- Set DNN parameters
 num_classes = 6
 batch_size = opt.batch_size
-sample_size = {3, 64, 64} -- input: channel/depth , height, width 
+sample_size = {3, 32, 32} -- input: channel/depth , height, width 
 feature_size = {3, 32, 64, 96} -- input channel/depth, feature maps ...
 filter_size = {5, 5}
 pool_size = {2, 2}
 pool_step = {2, 2}
 classifer_hidden_units = {512}
-features_out = feature_size[4] * 4 * 4 -- WARNING: change this if you change feature/filter/pool size/step
+features_out = feature_size[3] * 5 * 5 -- WARNING: change this if you change feature/filter/pool size/step
 -- Dropout
 dropout_p = 0.5
 if opt.dropout then
@@ -79,9 +79,9 @@ model:add(cudnn.SpatialConvolution(feature_size[2], feature_size[3], filter_size
 model:add(cudnn.ReLU(true))
 model:add(cudnn.SpatialMaxPooling(pool_size[1],pool_size[2],pool_step[1],pool_step[2])) -- 13
 -- Stage 3
-model:add(cudnn.SpatialConvolution(feature_size[3], feature_size[4], filter_size[1], filter_size[2]), 1, 1) -- 13 - 5 + 1 = 9
-model:add(cudnn.ReLU(true))
-model:add(cudnn.SpatialMaxPooling(pool_size[1],pool_size[2],pool_step[1],pool_step[2])) -- 4
+--model:add(cudnn.SpatialConvolution(feature_size[3], feature_size[4], filter_size[1], filter_size[2]), 1, 1) -- 13 - 5 + 1 = 9
+--model:add(cudnn.ReLU(true))
+--model:add(cudnn.SpatialMaxPooling(pool_size[1],pool_size[2],pool_step[1],pool_step[2])) -- 4
 
 -- Get feature vectors i.e. flat feature maps
 model:add(nn.Reshape(features_out, true)) 

@@ -6,7 +6,7 @@
 -- Include modules/libraries
 require 'torch'
 require 'nn'
-require 'nnx'
+--require 'nnx'
 require 'optim'
 
 -- Command line arguments
@@ -69,11 +69,11 @@ print 'Defining DNN model'
 model = nn.Sequential()
 -- Stage 1
 model:add(nn.SpatialConvolutionMM(feature_size[1], feature_size[2], filter_size[1], filter_size[2])) -- 32 - 5 + 1 = 28
-model:add(nn.Threshold(0,1e-6))
+model:add(nn.ReLU(true))
 model:add(nn.SpatialMaxPooling(pool_size[1],pool_size[2],pool_step[1],pool_step[2])) -- 14
 -- Stage 2
 model:add(nn.SpatialConvolutionMM(feature_size[2], feature_size[3], filter_size[1], filter_size[2])) -- 14 - 5 + 1 = 10
-model:add(nn.Threshold(0,1e-6))
+model:add(nn.ReLU())
 model:add(nn.SpatialMaxPooling(pool_size[1],pool_size[2],pool_step[1],pool_step[2])) -- 5
 -- Get feature vectors i.e. flat feature maps
 model:add(nn.Reshape(features_out, true)) 
@@ -82,7 +82,7 @@ if opt.dropout then
 end
 -- Fully connected layers
 model:add(nn.Linear(features_out, classifer_hidden_units[1]))
-model:add(nn.Threshold(0, 1e-6))
+model:add(nn.ReLU())
 if opt.dropout then
   model:add(nn.Dropout(dropout_p))
 end
