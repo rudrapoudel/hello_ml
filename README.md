@@ -11,7 +11,7 @@ A complete and minimum example of DNN in Torch.
 
 > th dnn/dnn.lua
 
-Without cuda
+With cuda
 > th dnn/dnn.lua -type cuda
 
 #DNN-multi-GPU- Deep Neural Network
