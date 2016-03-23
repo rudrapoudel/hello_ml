@@ -25,7 +25,7 @@ cmd:option('-momentum',        0.6,         'momentum')
 cmd:option('-weight_decay',    1e-5,        'weight decay')
 cmd:option('-batch_size',      1,           'mini-batch size (1 = pure stochastic)')
 cmd:option('-dropout',         false,        'do dropout with 0.5 probability')
-cmd:option('-print_layers_op', false,       'Output the values from each layers')
+cmd:option('-print_layers_op', true,       'Output the values from each layers')
 cmd:text()
 opt = cmd:parse(arg or {})
 

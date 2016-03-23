@@ -9,6 +9,11 @@ An example of multilayer neural network using stochastic gradient descent for MN
 #DNN- Deep Neural Network
 A complete and minimum example of DNN in Torch.
 
+> th dnn/dnn.lua
+
+Without cuda
+> th dnn/dnn.lua -type cuda
+
 #DNN-multi-GPU- Deep Neural Network
 A complete and minimum example of multi-GPUs DNN in Torch. Use following command for testing,
 
